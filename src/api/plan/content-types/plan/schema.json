@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plans",
+  "info": {
+    "singularName": "plan",
+    "pluralName": "plans",
+    "displayName": "Plan",
+    "description": "Planes y programas institucionales con documentos PDF"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "file": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Seguridad y Privacidad",
+        "Tratamiento de Riesgos",
+        "Estratégico TIC",
+        "Auditoría",
+        "Participación Ciudadana", 
+        "Recursos Humanos",
+        "Bienestar Social",
+        "Mejoramiento",
+        "Otros"
+      ],
+      "required": true
+    },
+    "year": {
+      "type": "integer",
+      "required": true,
+      "min": 2020,
+      "max": 2030,
+      "default": 2025
+    }
+  }
+} 

@@ -924,6 +924,54 @@ export interface ApiDirectoryDirectory extends Schema.CollectionType {
   };
 }
 
+export interface ApiPlanPlan extends Schema.CollectionType {
+  collectionName: 'plans';
+  info: {
+    singularName: 'plan';
+    pluralName: 'plans';
+    displayName: 'Plan';
+    description: 'Planes y programas institucionales con documentos PDF';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    file: Attribute.Media & Attribute.Required;
+    category: Attribute.Enumeration<
+      [
+        'Seguridad y Privacidad',
+        'Tratamiento de Riesgos',
+        'Estrat\u00E9gico TIC',
+        'Auditor\u00EDa',
+        'Participaci\u00F3n Ciudadana',
+        'Recursos Humanos',
+        'Bienestar Social',
+        'Mejoramiento',
+        'Otros'
+      ]
+    > &
+      Attribute.Required;
+    year: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 2020;
+          max: 2030;
+        },
+        number
+      > &
+      Attribute.DefaultTo<2025>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::plan.plan', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::plan.plan', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTagTag extends Schema.CollectionType {
   collectionName: 'tags';
   info: {
@@ -970,6 +1018,7 @@ declare module '@strapi/types' {
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
       'api::directory.directory': ApiDirectoryDirectory;
+      'api::plan.plan': ApiPlanPlan;
       'api::tag.tag': ApiTagTag;
     }
   }
