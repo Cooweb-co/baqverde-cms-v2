@@ -4,7 +4,7 @@
   "info": {
     "singularName": "plan",
     "pluralName": "plans",
-    "displayName": "Plan",
+    "displayName": "Plans and programs",
     "description": "Planes y programas institucionales con documentos PDF"
   },
   "options": {
@@ -32,7 +32,7 @@
         "Tratamiento de Riesgos",
         "Estratégico TIC",
         "Auditoría",
-        "Participación Ciudadana", 
+        "Participación Ciudadana",
         "Recursos Humanos",
         "Bienestar Social",
         "Mejoramiento",
@@ -48,4 +48,4 @@
       "default": 2025
     }
   }
-} 
+}

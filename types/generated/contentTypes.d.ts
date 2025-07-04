@@ -929,7 +929,7 @@ export interface ApiPlanPlan extends Schema.CollectionType {
   info: {
     singularName: 'plan';
     pluralName: 'plans';
-    displayName: 'Plan';
+    displayName: 'Plans and programs';
     description: 'Planes y programas institucionales con documentos PDF';
   };
   options: {
