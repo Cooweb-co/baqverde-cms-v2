@@ -949,6 +949,40 @@ export interface ApiTagTag extends Schema.CollectionType {
   };
 }
 
+export interface ApiWaterQualityWaterQuality extends Schema.CollectionType {
+  collectionName: 'water_qualities';
+  info: {
+    singularName: 'water-quality';
+    pluralName: 'water-qualities';
+    displayName: 'WaterQuality';
+    description: 'Calidad del agua';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    docDate: Attribute.Date & Attribute.Required;
+    description: Attribute.RichText & Attribute.Required;
+    document: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::water-quality.water-quality',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::water-quality.water-quality',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -971,6 +1005,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::directory.directory': ApiDirectoryDirectory;
       'api::tag.tag': ApiTagTag;
+      'api::water-quality.water-quality': ApiWaterQualityWaterQuality;
     }
   }
 }

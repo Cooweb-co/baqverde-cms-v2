@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "water_qualities",
+  "info": {
+    "singularName": "water-quality",
+    "pluralName": "water-qualities",
+    "displayName": "WaterQuality",
+    "description": "Calidad del agua"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "docDate": {
+      "type": "date",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "document": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}
