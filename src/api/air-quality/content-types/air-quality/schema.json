@@ -4,7 +4,7 @@
   "info": {
     "singularName": "air-quality",
     "pluralName": "air-qualities",
-    "displayName": "AirQuality",
+    "displayName": "Air Quality",
     "description": "Calidad del aire"
   },
   "options": {
@@ -12,18 +12,23 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "title": {
       "type": "string",
       "required": true,
       "unique": true
     },
-    "docDate": {
+    "date": {
       "type": "date",
-      "required": true
+      "required": false
     },
     "description": {
       "type": "richtext",
       "required": true
+    },
+    "periodicity": {
+      "type": "enumeration",
+      "enum": ["trimestre", "semestre", "mensual", "anual"],
+      "required": false
     },
     "document": {
       "type": "media",

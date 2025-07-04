@@ -793,16 +793,19 @@ export interface ApiAirQualityAirQuality extends Schema.CollectionType {
   info: {
     singularName: 'air-quality';
     pluralName: 'air-qualities';
-    displayName: 'AirQuality';
+    displayName: 'Air Quality';
     description: 'Calidad del aire';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required & Attribute.Unique;
-    docDate: Attribute.Date & Attribute.Required;
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    date: Attribute.Date;
     description: Attribute.RichText & Attribute.Required;
+    periodicity: Attribute.Enumeration<
+      ['trimestre', 'semestre', 'mensual', 'anual']
+    >;
     document: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
