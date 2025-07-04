@@ -16,7 +16,7 @@
       "type": "string",
       "required": true
     },
-    "report_pdf": {
+    "report": {
       "type": "media",
       "multiple": false,
       "required": false,
