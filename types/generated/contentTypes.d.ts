@@ -924,6 +924,52 @@ export interface ApiDirectoryDirectory extends Schema.CollectionType {
   };
 }
 
+export interface ApiGacetaGaceta extends Schema.CollectionType {
+  collectionName: 'gacetas';
+  info: {
+    singularName: 'gaceta';
+    pluralName: 'gacetas';
+    displayName: 'Gazette';
+  };
+  options: {
+    draftAndPublish: true;
+    listView: {
+      availableViews: ['LIST_VIEW', 'CARD_VIEW'];
+    };
+  };
+  attributes: {
+    nombreEmpresaPersonaNatural: Attribute.String & Attribute.Required;
+    nombreArchivo: Attribute.String & Attribute.Required;
+    tipoIdentificacion: Attribute.Enumeration<
+      ['Nit', 'C.C.', 'C.E.', 'Pasaporte']
+    > &
+      Attribute.Required;
+    numeroIdentificacion: Attribute.String & Attribute.Required;
+    categoria: Attribute.Enumeration<
+      ['Resoluci\u00F3n', 'Notificaci\u00F3n', 'Auto']
+    > &
+      Attribute.Required;
+    descripcion: Attribute.Text & Attribute.Required;
+    fechaPublicacion: Attribute.Date & Attribute.Required;
+    urlPDF: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::gaceta.gaceta',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::gaceta.gaceta',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTagTag extends Schema.CollectionType {
   collectionName: 'tags';
   info: {
@@ -970,6 +1016,7 @@ declare module '@strapi/types' {
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
       'api::directory.directory': ApiDirectoryDirectory;
+      'api::gaceta.gaceta': ApiGacetaGaceta;
       'api::tag.tag': ApiTagTag;
     }
   }

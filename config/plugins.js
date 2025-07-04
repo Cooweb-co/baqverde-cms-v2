@@ -1,4 +1,8 @@
 module.exports = ({ env }) => ({
+  'custom-field': {
+    enabled: true,
+    resolve: './src/plugins/custom-field'
+  },
   'users-permissions': {
     config: {
       jwtSecret: env('JWT_SECRET'),
@@ -8,9 +12,8 @@ module.exports = ({ env }) => ({
     config: {
       provider: 'strapi-provider-cloudflare-r2',
       providerOptions: {
-        // cloud_name: '45e3f5fd0378eddb9338076165751b4f' || env('CLOUDINARY_NAME'),
-        accessKeyId: env('CLOUDINARY_KEY'),
-        secretAccessKey: env('CLOUDINARY_SECRET'),
+        accessKeyId: env('CF_ACCESS_KEY_ID'),
+        secretAccessKey: env('CF_SECRET_ACCESS_KEY'),
         endpoint: env('CF_ENDPOINT'),
         cloudflarePublicAccessUrl: env('CF_PUBLIC_ACCESS_URL'),
         params: {
