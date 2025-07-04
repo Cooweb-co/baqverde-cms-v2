@@ -788,6 +788,40 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAirQualityAirQuality extends Schema.CollectionType {
+  collectionName: 'air_qualities';
+  info: {
+    singularName: 'air-quality';
+    pluralName: 'air-qualities';
+    displayName: 'AirQuality';
+    description: 'Calidad del aire';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    docDate: Attribute.Date & Attribute.Required;
+    description: Attribute.RichText & Attribute.Required;
+    document: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::air-quality.air-quality',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::air-quality.air-quality',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBlogBlog extends Schema.CollectionType {
   collectionName: 'blogs';
   info: {
@@ -949,40 +983,6 @@ export interface ApiTagTag extends Schema.CollectionType {
   };
 }
 
-export interface ApiWaterQualityWaterQuality extends Schema.CollectionType {
-  collectionName: 'water_qualities';
-  info: {
-    singularName: 'water-quality';
-    pluralName: 'water-qualities';
-    displayName: 'WaterQuality';
-    description: 'Calidad del agua';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String & Attribute.Required & Attribute.Unique;
-    docDate: Attribute.Date & Attribute.Required;
-    description: Attribute.RichText & Attribute.Required;
-    document: Attribute.Media & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::water-quality.water-quality',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::water-quality.water-quality',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1001,11 +1001,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::air-quality.air-quality': ApiAirQualityAirQuality;
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
       'api::directory.directory': ApiDirectoryDirectory;
       'api::tag.tag': ApiTagTag;
-      'api::water-quality.water-quality': ApiWaterQualityWaterQuality;
     }
   }
 }

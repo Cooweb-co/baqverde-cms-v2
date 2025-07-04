@@ -1,11 +1,11 @@
 {
   "kind": "collectionType",
-  "collectionName": "water_qualities",
+  "collectionName": "air_qualities",
   "info": {
-    "singularName": "water-quality",
-    "pluralName": "water-qualities",
-    "displayName": "WaterQuality",
-    "description": "Calidad del agua"
+    "singularName": "air-quality",
+    "pluralName": "air-qualities",
+    "displayName": "AirQuality",
+    "description": "Calidad del aire"
   },
   "options": {
     "draftAndPublish": true
