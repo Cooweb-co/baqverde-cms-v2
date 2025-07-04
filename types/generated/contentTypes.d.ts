@@ -905,6 +905,40 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiClimateChangeClimateChange extends Schema.CollectionType {
+  collectionName: 'climate_changes';
+  info: {
+    singularName: 'climate-change';
+    pluralName: 'climate-changes';
+    displayName: 'Climate Change';
+    description: 'Informaci\u00F3n sobre cambio clim\u00E1tico';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    description: Attribute.RichText & Attribute.Required;
+    date: Attribute.Date;
+    document: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::climate-change.climate-change',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::climate-change.climate-change',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDirectoryDirectory extends Schema.CollectionType {
   collectionName: 'directories';
   info: {
@@ -1007,6 +1041,7 @@ declare module '@strapi/types' {
       'api::air-quality.air-quality': ApiAirQualityAirQuality;
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
+      'api::climate-change.climate-change': ApiClimateChangeClimateChange;
       'api::directory.directory': ApiDirectoryDirectory;
       'api::tag.tag': ApiTagTag;
     }
