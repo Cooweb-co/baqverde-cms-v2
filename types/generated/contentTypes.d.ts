@@ -938,25 +938,40 @@ export interface ApiPlanPlan extends Schema.CollectionType {
   attributes: {
     title: Attribute.String & Attribute.Required & Attribute.Unique;
     file: Attribute.Media & Attribute.Required;
-    category: Attribute.Enumeration<
+    Plans: Attribute.Enumeration<
       [
         'Seguridad y Privacidad',
-        'Tratamiento de Riesgos',
-        'Estrat\u00E9gico TIC',
+        'Gesti\u00F3n de Riesgos para Seguridad y Privacidad',
+        'Plan Estrat\u00E9gico de TIC',
         'Auditor\u00EDa',
         'Participaci\u00F3n Ciudadana',
-        'Recursos Humanos',
+        'Vacantes Laborales y Talento Humano',
         'Bienestar Social',
         'Mejoramiento',
-        'Otros'
+        'Capacitaci\u00F3n Institucional',
+        'Emergencias',
+        'Seguridad y Salud en el Trabajo',
+        'Estrategia de Talento Humano',
+        'Estrategia Institucional',
+        'Archivo Institucional',
+        'Transparencia y \u00C9tica P\u00FAblica',
+        'Programas'
       ]
     > &
       Attribute.Required;
+    otherPlanCategory: Attribute.String;
+    Programs: Attribute.Enumeration<
+      [
+        'Auditor\u00EDa',
+        'Retiro Asistido',
+        'Preparaci\u00F3n para la Jubilaci\u00F3n'
+      ]
+    >;
     year: Attribute.Integer &
       Attribute.Required &
       Attribute.SetMinMax<
         {
-          min: 2020;
+          min: 2000;
           max: 2030;
         },
         number
