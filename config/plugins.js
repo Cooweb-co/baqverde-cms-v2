@@ -12,8 +12,8 @@ module.exports = ({ env }) => ({
     config: {
       provider: 'strapi-provider-cloudflare-r2',
       providerOptions: {
-        accessKeyId: env('CF_ACCESS_KEY_ID'),
-        secretAccessKey: env('CF_SECRET_ACCESS_KEY'),
+        accessKeyId: env('CLOUDINARY_KEY'),
+        secretAccessKey: env('CLOUDINARY_SECRET'),
         endpoint: env('CF_ENDPOINT'),
         cloudflarePublicAccessUrl: env('CF_PUBLIC_ACCESS_URL'),
         params: {
