@@ -924,6 +924,69 @@ export interface ApiDirectoryDirectory extends Schema.CollectionType {
   };
 }
 
+export interface ApiPlanPlan extends Schema.CollectionType {
+  collectionName: 'plans';
+  info: {
+    singularName: 'plan';
+    pluralName: 'plans';
+    displayName: 'Plans and programs';
+    description: 'Planes y programas institucionales con documentos PDF';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    file: Attribute.Media & Attribute.Required;
+    Plans: Attribute.Enumeration<
+      [
+        'Seguridad y Privacidad',
+        'Gesti\u00F3n de Riesgos para Seguridad y Privacidad',
+        'Plan Estrat\u00E9gico de TIC',
+        'Auditor\u00EDa',
+        'Participaci\u00F3n Ciudadana',
+        'Vacantes Laborales y Talento Humano',
+        'Bienestar Social',
+        'Mejoramiento',
+        'Capacitaci\u00F3n Institucional',
+        'Emergencias',
+        'Seguridad y Salud en el Trabajo',
+        'Estrategia de Talento Humano',
+        'Estrategia Institucional',
+        'Archivo Institucional',
+        'Transparencia y \u00C9tica P\u00FAblica',
+        'Programas'
+      ]
+    > &
+      Attribute.Required;
+    otherPlanCategory: Attribute.String;
+    Programs: Attribute.Enumeration<
+      [
+        'Auditor\u00EDa',
+        'Retiro Asistido',
+        'Preparaci\u00F3n para la Jubilaci\u00F3n'
+      ]
+    >;
+    year: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 2000;
+          max: 2030;
+        },
+        number
+      > &
+      Attribute.DefaultTo<2025>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::plan.plan', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::plan.plan', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTagTag extends Schema.CollectionType {
   collectionName: 'tags';
   info: {
@@ -970,6 +1033,7 @@ declare module '@strapi/types' {
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
       'api::directory.directory': ApiDirectoryDirectory;
+      'api::plan.plan': ApiPlanPlan;
       'api::tag.tag': ApiTagTag;
     }
   }
