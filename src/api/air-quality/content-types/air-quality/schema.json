@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "air_qualities",
+  "info": {
+    "singularName": "air-quality",
+    "pluralName": "air-qualities",
+    "displayName": "Air Quality",
+    "description": "Calidad del aire"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "date": {
+      "type": "date",
+      "required": false
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "periodicity": {
+      "type": "enumeration",
+      "enum": ["trimestre", "semestre", "mensual", "anual"],
+      "required": false
+    },
+    "document": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "urban_forestry_documents",
+  "info": {
+    "singularName": "urban-forestry-document",
+    "pluralName": "urban-forestry-documents",
+    "displayName": "Urban Forestry Document",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "document": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}
