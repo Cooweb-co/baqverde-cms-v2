@@ -4,7 +4,7 @@
   "info": {
     "singularName": "ica-report",
     "pluralName": "ica-reports",
-    "displayName": "ICAReports",
+    "displayName": "ICA Reports",
     "description": "Colección para almacenar los reportes de calidad de aire (ICA)"
   },
   "options": {
