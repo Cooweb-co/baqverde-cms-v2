@@ -788,6 +788,43 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAirQualityAirQuality extends Schema.CollectionType {
+  collectionName: 'air_qualities';
+  info: {
+    singularName: 'air-quality';
+    pluralName: 'air-qualities';
+    displayName: 'Air Quality';
+    description: 'Calidad del aire';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    date: Attribute.Date;
+    description: Attribute.RichText & Attribute.Required;
+    periodicity: Attribute.Enumeration<
+      ['trimestre', 'semestre', 'mensual', 'anual']
+    >;
+    document: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::air-quality.air-quality',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::air-quality.air-quality',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBlogBlog extends Schema.CollectionType {
   collectionName: 'blogs';
   info: {
@@ -861,6 +898,40 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::category.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiClimateChangeClimateChange extends Schema.CollectionType {
+  collectionName: 'climate_changes';
+  info: {
+    singularName: 'climate-change';
+    pluralName: 'climate-changes';
+    displayName: 'Climate Change';
+    description: 'Informaci\u00F3n sobre cambio clim\u00E1tico';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    description: Attribute.RichText & Attribute.Required;
+    date: Attribute.Date;
+    document: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::climate-change.climate-change',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::climate-change.climate-change',
       'oneToOne',
       'admin::user'
     > &
@@ -1030,8 +1101,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::air-quality.air-quality': ApiAirQualityAirQuality;
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
+      'api::climate-change.climate-change': ApiClimateChangeClimateChange;
       'api::directory.directory': ApiDirectoryDirectory;
       'api::plan.plan': ApiPlanPlan;
       'api::tag.tag': ApiTagTag;
