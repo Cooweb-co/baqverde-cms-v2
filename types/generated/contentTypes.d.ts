@@ -995,6 +995,59 @@ export interface ApiDirectoryDirectory extends Schema.CollectionType {
   };
 }
 
+export interface ApiFinancialReportFinancialReport
+  extends Schema.CollectionType {
+  collectionName: 'financial_reports';
+  info: {
+    singularName: 'financial-report';
+    pluralName: 'financial-reports';
+    displayName: 'Financial Report';
+    };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    slug: Attribute.UID<'api::financial-report.financial-report', 'title'>;
+    year: Attribute.Integer;
+    month: Attribute.Enumeration<
+      [
+        'Enero',
+        'Febrero',
+        'Marzo',
+        'Abril',
+        'Mayo',
+        'Junio',
+        'Julio',
+        'Agosto',
+        'Septiembre',
+        'Octubre',
+        'Noviembre',
+        'Diciembre'
+      ]
+    >;
+    isAnnual: Attribute.Boolean;
+    reportDate: Attribute.Date;
+    pdf: Attribute.Media;
+    description: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::financial-report.financial-report',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::financial-report.financial-report',
+      'oneToOne',
+      'admin::user'
+    > &
+    Attribute.Private;
+  };
+}
+
 export interface ApiPlanPlan extends Schema.CollectionType {
   collectionName: 'plans';
   info: {
@@ -1106,6 +1159,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::climate-change.climate-change': ApiClimateChangeClimateChange;
       'api::directory.directory': ApiDirectoryDirectory;
+      'api::financial-report.financial-report': ApiFinancialReportFinancialReport;
       'api::plan.plan': ApiPlanPlan;
       'api::tag.tag': ApiTagTag;
     }
