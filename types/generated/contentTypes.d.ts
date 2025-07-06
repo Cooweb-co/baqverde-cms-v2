@@ -924,6 +924,61 @@ export interface ApiDirectoryDirectory extends Schema.CollectionType {
   };
 }
 
+export interface ApiNormativityNormativity extends Schema.CollectionType {
+  collectionName: 'normativities';
+  info: {
+    singularName: 'normativity';
+    pluralName: 'normativities';
+    displayName: 'Normativity';
+    description: 'Management of regulatory documents such as resolutions, agreements, annexes, circulars, notifications, and orders';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    normativityType: Attribute.Enumeration<
+      [
+        'Resolutions',
+        'Agreements',
+        'Annexes',
+        'Circulars',
+        'Notification',
+        'Order'
+      ]
+    > &
+      Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    document: Attribute.Media;
+    year: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1900;
+          max: 2100;
+        },
+        number
+      >;
+    referenceNumber: Attribute.String;
+    slug: Attribute.UID;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::normativity.normativity',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::normativity.normativity',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTagTag extends Schema.CollectionType {
   collectionName: 'tags';
   info: {
@@ -970,6 +1025,7 @@ declare module '@strapi/types' {
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
       'api::directory.directory': ApiDirectoryDirectory;
+      'api::normativity.normativity': ApiNormativityNormativity;
       'api::tag.tag': ApiTagTag;
     }
   }
