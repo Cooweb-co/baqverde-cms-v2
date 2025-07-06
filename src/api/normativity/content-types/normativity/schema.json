@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "normativities",
+  "info": {
+    "singularName": "normativity",
+    "pluralName": "normativities",
+    "displayName": "Normativity",
+    "description": "Management of regulatory documents such as resolutions, agreements, annexes, circulars, notifications, and orders"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "description": "The official name of the document (e.g., 'Agreement 0001 of 2023')"
+    },
+    "normativityType": {
+      "type": "enumeration",
+      "enum": [
+        "Resolutions",
+        "Agreements",
+        "Annexes",
+        "Circulars",
+        "Notification",
+        "Order"
+      ],
+      "required": true,
+      "description": "The type of regulatory document (select from the available options)"
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "description": "A brief summary of the document's content and purpose"
+    },
+    "document": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "year": {
+      "type": "integer",
+      "required": true,
+      "min": 1900,
+      "max": 2100,
+      "description": "The year when the document was issued"
+    },
+    "referenceNumber": {
+      "type": "string",
+      "required": false,
+      "description": "The official reference or identification number of the document (e.g., '0001', '1482')"
+    },
+    "slug": {
+      "type": "uid",
+      "description": "URL-friendly version of the file name (automatically generated)"
+    }
+  }
+}
