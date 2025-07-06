@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ica_reports",
+  "info": {
+    "singularName": "ica-report",
+    "pluralName": "ica-reports",
+    "displayName": "ICA Reports",
+    "description": "Colección para almacenar los reportes de calidad de aire (ICA)"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "report": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}

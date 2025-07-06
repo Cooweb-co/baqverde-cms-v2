@@ -788,6 +788,43 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAirQualityAirQuality extends Schema.CollectionType {
+  collectionName: 'air_qualities';
+  info: {
+    singularName: 'air-quality';
+    pluralName: 'air-qualities';
+    displayName: 'Air Quality';
+    description: 'Calidad del aire';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    date: Attribute.Date;
+    description: Attribute.RichText & Attribute.Required;
+    periodicity: Attribute.Enumeration<
+      ['trimestre', 'semestre', 'mensual', 'anual']
+    >;
+    document: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::air-quality.air-quality',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::air-quality.air-quality',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBlogBlog extends Schema.CollectionType {
   collectionName: 'blogs';
   info: {
@@ -868,6 +905,40 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiClimateChangeClimateChange extends Schema.CollectionType {
+  collectionName: 'climate_changes';
+  info: {
+    singularName: 'climate-change';
+    pluralName: 'climate-changes';
+    displayName: 'Climate Change';
+    description: 'Informaci\u00F3n sobre cambio clim\u00E1tico';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    description: Attribute.RichText & Attribute.Required;
+    date: Attribute.Date;
+    document: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::climate-change.climate-change',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::climate-change.climate-change',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDirectoryDirectory extends Schema.CollectionType {
   collectionName: 'directories';
   info: {
@@ -921,6 +992,59 @@ export interface ApiDirectoryDirectory extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+  };
+}
+
+export interface ApiFinancialReportFinancialReport
+  extends Schema.CollectionType {
+  collectionName: 'financial_reports';
+  info: {
+    singularName: 'financial-report';
+    pluralName: 'financial-reports';
+    displayName: 'Financial Report';
+    };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    slug: Attribute.UID<'api::financial-report.financial-report', 'title'>;
+    year: Attribute.Integer;
+    month: Attribute.Enumeration<
+      [
+        'Enero',
+        'Febrero',
+        'Marzo',
+        'Abril',
+        'Mayo',
+        'Junio',
+        'Julio',
+        'Agosto',
+        'Septiembre',
+        'Octubre',
+        'Noviembre',
+        'Diciembre'
+      ]
+    >;
+    isAnnual: Attribute.Boolean;
+    reportDate: Attribute.Date;
+    pdf: Attribute.Media;
+    description: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::financial-report.financial-report',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::financial-report.financial-report',
+      'oneToOne',
+      'admin::user'
+    > &
+    Attribute.Private;
   };
 }
 
@@ -979,6 +1103,69 @@ export interface ApiNormativityNormativity extends Schema.CollectionType {
   };
 }
 
+export interface ApiPlanPlan extends Schema.CollectionType {
+  collectionName: 'plans';
+  info: {
+    singularName: 'plan';
+    pluralName: 'plans';
+    displayName: 'Plans and programs';
+    description: 'Planes y programas institucionales con documentos PDF';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    file: Attribute.Media & Attribute.Required;
+    Plans: Attribute.Enumeration<
+      [
+        'Seguridad y Privacidad',
+        'Gesti\u00F3n de Riesgos para Seguridad y Privacidad',
+        'Plan Estrat\u00E9gico de TIC',
+        'Auditor\u00EDa',
+        'Participaci\u00F3n Ciudadana',
+        'Vacantes Laborales y Talento Humano',
+        'Bienestar Social',
+        'Mejoramiento',
+        'Capacitaci\u00F3n Institucional',
+        'Emergencias',
+        'Seguridad y Salud en el Trabajo',
+        'Estrategia de Talento Humano',
+        'Estrategia Institucional',
+        'Archivo Institucional',
+        'Transparencia y \u00C9tica P\u00FAblica',
+        'Programas'
+      ]
+    > &
+      Attribute.Required;
+    otherPlanCategory: Attribute.String;
+    Programs: Attribute.Enumeration<
+      [
+        'Auditor\u00EDa',
+        'Retiro Asistido',
+        'Preparaci\u00F3n para la Jubilaci\u00F3n'
+      ]
+    >;
+    year: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 2000;
+          max: 2030;
+        },
+        number
+      > &
+      Attribute.DefaultTo<2025>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::plan.plan', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::plan.plan', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTagTag extends Schema.CollectionType {
   collectionName: 'tags';
   info: {
@@ -1022,10 +1209,14 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::air-quality.air-quality': ApiAirQualityAirQuality;
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
+      'api::climate-change.climate-change': ApiClimateChangeClimateChange;
       'api::directory.directory': ApiDirectoryDirectory;
       'api::normativity.normativity': ApiNormativityNormativity;
+      'api::financial-report.financial-report': ApiFinancialReportFinancialReport;
+      'api::plan.plan': ApiPlanPlan;
       'api::tag.tag': ApiTagTag;
     }
   }
