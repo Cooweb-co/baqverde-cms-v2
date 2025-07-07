@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plans",
+  "info": {
+    "singularName": "plan",
+    "pluralName": "plans",
+    "displayName": "Plans and programs",
+    "description": "Planes y programas institucionales con documentos PDF"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "file": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "Plans": {
+      "type": "enumeration",
+      "enum": [
+        "Seguridad y Privacidad",
+        "Gestión de Riesgos para Seguridad y Privacidad",
+        "Plan Estratégico de TIC",
+        "Auditoría",
+        "Participación Ciudadana",
+        "Vacantes Laborales y Talento Humano",
+        "Bienestar Social",
+        "Mejoramiento",
+        "Capacitación Institucional",
+        "Emergencias",
+        "Seguridad y Salud en el Trabajo",
+        "Estrategia de Talento Humano",
+        "Estrategia Institucional",
+        "Archivo Institucional",
+        "Transparencia y Ética Pública",
+        "Programas"
+      ],
+      "required": true
+    },
+    "otherPlanCategory": {
+      "type": "string",
+      "description": "Si seleccionaste 'Otros' en Planes, especifica aquí el nombre del plan"
+    },
+    "Programs": {
+      "type": "enumeration",
+      "enum": [
+        "Auditoría",
+        "Retiro Asistido",
+        "Preparación para la Jubilación"
+      ],
+      "description": "Subcategorías disponibles cuando se selecciona la categoría 'Programas'"
+    },
+    "year": {
+      "type": "integer",
+      "required": true,
+      "min": 2000,
+      "max": 2030,
+      "default": 2025
+    }
+  }
+}

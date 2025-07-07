@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "climate_changes",
+  "info": {
+    "singularName": "climate-change",
+    "pluralName": "climate-changes",
+    "displayName": "Climate Change",
+    "description": "Información sobre cambio climático"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": false
+    },
+    "document": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}
