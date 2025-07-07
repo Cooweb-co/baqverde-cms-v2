@@ -4,7 +4,7 @@
   "info": {
     "singularName": "gaceta",
     "pluralName": "gacetas",
-    "displayName": "Gazette"
+    "displayName": "Gazettes"
   },
   "options": {
     "draftAndPublish": true,
@@ -14,52 +14,52 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "NombreEmpresa/Persona": {
+    "Company Name / Natural Person": {
       "type": "string",
       "required": true,
       "searchable": true,
-      "displayName": "Nombre Empresa / Persona Natural"
+      "displayName": "Company Name / Natural Person"
     },
-    "NombreArchivo": {
+    "File Name": {
       "type": "string",
       "required": true,
       "searchable": true,
-      "displayName": "Nombre Archivo"
+      "displayName": "File Name"
     },
-    "TipoIdentificacion": {
+    "Type Identification": {
       "type": "enumeration",
       "enum": ["Nit", "C.C.", "C.E.", "Pasaporte"],
       "required": true,
-      "displayName": "Tipo Identificación"
+      "displayName": "Type Identification"
     },
-    "NumeroIdentificacion": {
+    "Identification Number": {
       "type": "string",
       "required": true,
       "searchable": true,
-      "displayName": "NumeroIdentificación"
+      "displayName": "Identification Number"
     },
-    "Categoria": {
+    "Category": {
       "type": "enumeration",
       "enum": ["Resolución", "Notificación", "Auto"],
       "required": true,
-      "displayName": "Categoría"
+      "displayName": "Category"
     },
-    "Descripcion": {
+    "Description": {
       "type": "text",
       "required": true,
-      "displayName": "Descripción"
+      "displayName": "Description"
     },
-    "FechaPublicacion": {
+    "Publication Date": {
       "type": "date",
       "required": true,
-      "displayName": "FechaPublicacion"
+      "displayName": "Publication Date"
     },
-    "UrlPDF": {
+    "Upload File": {
       "type": "media",
       "multiple": false,
       "required": true,
       "allowedTypes": ["files"],
-      "displayName": "UrlPDF"
+      "displayName": "Upload PDF"
     }
   }
 }
