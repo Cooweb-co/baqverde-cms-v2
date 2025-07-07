@@ -995,49 +995,56 @@ export interface ApiDirectoryDirectory extends Schema.CollectionType {
   };
 }
 
-export interface ApiGacetaGaceta extends Schema.CollectionType {
-  collectionName: 'gacetas';
+export interface ApiFinancialReportFinancialReport
+  extends Schema.CollectionType {
+  collectionName: 'financial_reports';
   info: {
-    singularName: 'gaceta';
-    pluralName: 'gacetas';
-    displayName: 'Gazette';
-  };
+    singularName: 'financial-report';
+    pluralName: 'financial-reports';
+    displayName: 'Financial Report';
+    };
   options: {
     draftAndPublish: true;
-    listView: {
-      availableViews: ['LIST_VIEW', 'CARD_VIEW'];
-    };
   };
   attributes: {
-    nombreEmpresaPersonaNatural: Attribute.String & Attribute.Required;
-    nombreArchivo: Attribute.String & Attribute.Required;
-    tipoIdentificacion: Attribute.Enumeration<
-      ['Nit', 'C.C.', 'C.E.', 'Pasaporte']
-    > &
-      Attribute.Required;
-    numeroIdentificacion: Attribute.String & Attribute.Required;
-    categoria: Attribute.Enumeration<
-      ['Resoluci\u00F3n', 'Notificaci\u00F3n', 'Auto']
-    > &
-      Attribute.Required;
-    descripcion: Attribute.Text & Attribute.Required;
-    fechaPublicacion: Attribute.Date & Attribute.Required;
-    urlPDF: Attribute.Media & Attribute.Required;
+    title: Attribute.String;
+    slug: Attribute.UID<'api::financial-report.financial-report', 'title'>;
+    year: Attribute.Integer;
+    month: Attribute.Enumeration<
+      [
+        'Enero',
+        'Febrero',
+        'Marzo',
+        'Abril',
+        'Mayo',
+        'Junio',
+        'Julio',
+        'Agosto',
+        'Septiembre',
+        'Octubre',
+        'Noviembre',
+        'Diciembre'
+      ]
+    >;
+    isAnnual: Attribute.Boolean;
+    reportDate: Attribute.Date;
+    pdf: Attribute.Media;
+    description: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::gaceta.gaceta',
+      'api::financial-report.financial-report',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::gaceta.gaceta',
+      'api::financial-report.financial-report',
       'oneToOne',
       'admin::user'
     > &
-   Attribute.Private;
+    Attribute.Private;
   };
 }
 
@@ -1152,7 +1159,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::climate-change.climate-change': ApiClimateChangeClimateChange;
       'api::directory.directory': ApiDirectoryDirectory;
-      'api::gaceta.gaceta': ApiGacetaGaceta;
+      'api::financial-report.financial-report': ApiFinancialReportFinancialReport;
       'api::plan.plan': ApiPlanPlan;
       'api::tag.tag': ApiTagTag;
     }
