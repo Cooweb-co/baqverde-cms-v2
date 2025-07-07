@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "financial_reports",
+  "info": {
+    "singularName": "financial-report",
+    "pluralName": "financial-reports",
+    "displayName": "Financial State"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "month": {
+      "type": "enumeration",
+      "enum": [
+        "Enero",
+        "Febrero",
+        "Marzo",
+        "Abril",
+        "Mayo",
+        "Junio",
+        "Julio",
+        "Agosto",
+        "Septiembre",
+        "Octubre",
+        "Noviembre",
+        "Diciembre"
+      ]
+    },
+    "isAnnual": {
+      "type": "boolean"
+    },
+    "reportDate": {
+      "type": "date"
+    },
+    "pdf": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}
