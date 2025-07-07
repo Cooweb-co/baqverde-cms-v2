@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gacetas",
+  "info": {
+    "singularName": "gaceta",
+    "pluralName": "gacetas",
+    "displayName": "Gazette"
+  },
+  "options": {
+    "draftAndPublish": true,
+    "listView": {
+      "availableViews": ["LIST_VIEW", "CARD_VIEW"]
+    }
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "NombreEmpresa/Persona": {
+      "type": "string",
+      "required": true,
+      "searchable": true,
+      "displayName": "Nombre Empresa / Persona Natural"
+    },
+    "NombreArchivo": {
+      "type": "string",
+      "required": true,
+      "searchable": true,
+      "displayName": "Nombre Archivo"
+    },
+    "TipoIdentificacion": {
+      "type": "enumeration",
+      "enum": ["Nit", "C.C.", "C.E.", "Pasaporte"],
+      "required": true,
+      "displayName": "Tipo Identificación"
+    },
+    "NumeroIdentificacion": {
+      "type": "string",
+      "required": true,
+      "searchable": true,
+      "displayName": "NumeroIdentificación"
+    },
+    "Categoria": {
+      "type": "enumeration",
+      "enum": ["Resolución", "Notificación", "Auto"],
+      "required": true,
+      "displayName": "Categoría"
+    },
+    "Descripcion": {
+      "type": "text",
+      "required": true,
+      "displayName": "Descripción"
+    },
+    "FechaPublicacion": {
+      "type": "date",
+      "required": true,
+      "displayName": "FechaPublicacion"
+    },
+    "UrlPDF": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["files"],
+      "displayName": "UrlPDF"
+    }
+  }
+}
