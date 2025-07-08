@@ -4,7 +4,9 @@
   "info": {
     "singularName": "gaceta",
     "pluralName": "gacetas",
+
     "displayName": "Gazette"
+
   },
   "options": {
     "draftAndPublish": true,
@@ -44,6 +46,7 @@
       "required": true,
       "displayName": "Category"
     },
+
     "Administrative act": {
       "type": "string",
       "required": true,
@@ -53,6 +56,7 @@
     "Description": {
       "type": "text",
       "required": false,
+
       "displayName": "Description"
     },
     "Publication Date": {
@@ -65,7 +69,9 @@
       "multiple": false,
       "required": true,
       "allowedTypes": ["files"],
-      "displayName": "Upload File"
+
+      "displayName": "Upload PDF"
+
     }
   }
 }

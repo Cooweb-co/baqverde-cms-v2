@@ -740,6 +740,61 @@ export interface ApiInformeGestionInformeGestion extends Schema.CollectionType {
   };
 }
 
+export interface ApiNormativityNormativity extends Schema.CollectionType {
+  collectionName: 'normativities';
+  info: {
+    singularName: 'normativity';
+    pluralName: 'normativities';
+    displayName: 'Normativity';
+    description: 'Management of regulatory documents such as resolutions, agreements, annexes, circulars, notifications, and orders';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    normativityType: Attribute.Enumeration<
+      [
+        'Resolutions',
+        'Agreements',
+        'Annexes',
+        'Circulars',
+        'Notification',
+        'Order'
+      ]
+    > &
+      Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    document: Attribute.Media;
+    year: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1900;
+          max: 2100;
+        },
+        number
+      >;
+    referenceNumber: Attribute.String;
+    slug: Attribute.UID;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::normativity.normativity',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::normativity.normativity',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPlanPlan extends Schema.CollectionType {
   collectionName: 'plans';
   info: {
@@ -1303,6 +1358,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::climate-change.climate-change': ApiClimateChangeClimateChange;
       'api::directory.directory': ApiDirectoryDirectory;
+      'api::normativity.normativity': ApiNormativityNormativity;
       'api::financial-report.financial-report': ApiFinancialReportFinancialReport;
       'api::gaceta.gaceta': ApiGacetaGaceta;
       'api::ica-report.ica-report': ApiIcaReportIcaReport;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "financial-report",
     "pluralName": "financial-reports",
-    "displayName": "Financial Report"
+    "displayName": "Financial Report",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,12 +15,9 @@
     "title": {
       "type": "string"
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
-    },
     "year": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "month": {
       "type": "enumeration",
@@ -36,26 +34,22 @@
         "Octubre",
         "Noviembre",
         "Diciembre"
-      ]
+      ],
+      "required": false
     },
     "isAnnual": {
       "type": "boolean"
     },
-    "reportDate": {
-      "type": "date"
-    },
-    "pdf": {
+    "report": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "description": {
-      "type": "richtext"
+      ]
     }
   }
 }

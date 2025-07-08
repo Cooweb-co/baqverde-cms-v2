@@ -4,7 +4,7 @@
   "info": {
     "singularName": "plan",
     "pluralName": "plans",
-    "displayName": "Plans and programs",
+    "displayName": "Plans and Programs",
     "description": "Planes y programas institucionales con documentos PDF"
   },
   "options": {
@@ -15,7 +15,7 @@
     "title": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": false
     },
     "file": {
       "type": "media",
@@ -30,22 +30,21 @@
       "enum": [
         "Seguridad y Privacidad",
         "Gestión de Riesgos para Seguridad y Privacidad",
-        "Plan Estratégico de TIC",
+        "Estratégico de TIC",
         "Auditoría",
         "Participación Ciudadana",
-        "Vacantes Laborales y Talento Humano",
+        "Recursos Humanos",
         "Bienestar Social",
         "Mejoramiento",
-        "Capacitación Institucional",
+        "Capacitación",
         "Emergencias",
         "Seguridad y Salud en el Trabajo",
         "Estrategia de Talento Humano",
         "Estrategia Institucional",
         "Archivo Institucional",
-        "Transparencia y Ética Pública",
-        "Programas"
+        "Transparencia y Ética Pública"
       ],
-      "required": true
+      "required": false
     },
     "otherPlanCategory": {
       "type": "string",
@@ -55,7 +54,7 @@
       "type": "enumeration",
       "enum": [
         "Auditoría",
-        "Retiro Asistido",
+        "Desvinculación Asistida",
         "Preparación para la Jubilación"
       ],
       "description": "Subcategorías disponibles cuando se selecciona la categoría 'Programas'"

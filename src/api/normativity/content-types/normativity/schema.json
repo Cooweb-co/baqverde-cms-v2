@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "normativities",
+  "info": {
+    "singularName": "normativity",
+    "pluralName": "normativities",
+    "displayName": "Normativity",
+    "description": "Management of regulatory documents such as resolutions, agreements, annexes, circulars, notifications, and orders"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "File name": {
+      "type": "string",
+      "required": true,
+      "description": "The official name of the document (e.g., 'Agreement 0001 of 2023')"
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "Resoluciones",
+        "Acuerdos",
+        "Anexos",
+        "Circulares",
+        "Notificaciones",
+        "Autos"
+      ],
+      "required": true,
+      "description": "The type of regulatory document (select from the available options)"
+    },
+    "Description": {
+      "type": "text",
+      "required": true,
+      "description": "A brief summary of the document's content and purpose"
+    },
+    "Upload file": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "Year": {
+      "type": "integer",
+      "required": true,
+      "min": 1900,
+      "max": 2100,
+      "description": "The year when the document was issued"
+    }
+  }
+}
