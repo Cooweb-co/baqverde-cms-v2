@@ -1,16 +1,16 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Attribute, Schema } from '@strapi/strapi';
 
 export interface WorkExperience extends Schema.Component {
   collectionName: 'components_work_experiences';
   info: {
-    displayName: 'Experience';
     description: 'Experiencia laboral del funcionario';
+    displayName: 'Experience';
   };
   attributes: {
-    position: Attribute.String & Attribute.Required;
-    entity: Attribute.String & Attribute.Required;
-    startDate: Attribute.Date & Attribute.Required;
     endDate: Attribute.Date & Attribute.Required;
+    entity: Attribute.String & Attribute.Required;
+    position: Attribute.String & Attribute.Required;
+    startDate: Attribute.Date & Attribute.Required;
   };
 }
 

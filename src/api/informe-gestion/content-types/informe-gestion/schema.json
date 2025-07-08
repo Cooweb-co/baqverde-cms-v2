@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "informes_gestion",
+  "info": {
+    "singularName": "informe-gestion",
+    "pluralName": "informes-gestion",
+    "displayName": "Informes de Gestion",
+    "description": "Gestion de informes con archivos PDF"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 150
+    },
+    "archivo_pdf": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["files"],
+      "private": false
+    }
+  }
+}
