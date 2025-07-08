@@ -4,6 +4,7 @@ module.exports = ({ env }) => ({
     'http://localhost:3000',
     'http://localhost:4321',
     'http://localhost:1337',
+    'http://127.0.0.1:1337',
     'https://baq-verde.web.app',
     'https://baq-verde.firebaseapp.com',
     'https://baq-verde.vercel.app',

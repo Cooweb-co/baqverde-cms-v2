@@ -14,52 +14,58 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "NombreEmpresa/Persona": {
+    "Company Name / Natural Person": {
       "type": "string",
       "required": true,
       "searchable": true,
-      "displayName": "Nombre Empresa / Persona Natural"
+      "displayName": "Company Name / Natural Person"
     },
-    "NombreArchivo": {
+    "File Name": {
       "type": "string",
       "required": true,
       "searchable": true,
-      "displayName": "Nombre Archivo"
+      "displayName": "File Name"
     },
-    "TipoIdentificacion": {
+    "Type Identification": {
       "type": "enumeration",
       "enum": ["Nit", "C.C.", "C.E.", "Pasaporte"],
       "required": true,
-      "displayName": "Tipo Identificación"
+      "displayName": "Type Identification"
     },
-    "NumeroIdentificacion": {
+    "Identification Number": {
       "type": "string",
       "required": true,
       "searchable": true,
-      "displayName": "NumeroIdentificación"
+      "displayName": "Identification Number"
     },
-    "Categoria": {
+    "Category": {
       "type": "enumeration",
       "enum": ["Resolución", "Notificación", "Auto"],
       "required": true,
-      "displayName": "Categoría"
+      "displayName": "Category"
     },
-    "Descripcion": {
-      "type": "text",
+    "Administrative act": {
+      "type": "string",
       "required": true,
-      "displayName": "Descripción"
+      "maxLength": 30,
+      "displayName": "Administrative act"
     },
-    "FechaPublicacion": {
+    "Description": {
+      "type": "text",
+      "required": false,
+      "displayName": "Description"
+    },
+    "Publication Date": {
       "type": "date",
       "required": true,
-      "displayName": "FechaPublicacion"
+      "displayName": "Publication Date"
     },
-    "UrlPDF": {
+    "Upload File": {
       "type": "media",
       "multiple": false,
       "required": true,
       "allowedTypes": ["files"],
-      "displayName": "UrlPDF"
+      "displayName": "Upload File"
     }
   }
 }
