@@ -441,6 +441,56 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   };
 }
 
+export interface ApiBudgetBudget extends Schema.CollectionType {
+  collectionName: 'budgets';
+  info: {
+    description: 'Annual entity budgets';
+    displayName: 'Budget';
+    pluralName: 'budgets';
+    singularName: 'budget';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::budget.budget',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    document: Attribute.Media<'files'> & Attribute.Required;
+    publishedAt: Attribute.DateTime;
+    resolutionNumber: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::budget.budget',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    year: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          max: 2100;
+          min: 2000;
+        },
+        number
+      >;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -1214,6 +1264,7 @@ declare module '@strapi/types' {
       'admin::user': AdminUser;
       'api::air-quality.air-quality': ApiAirQualityAirQuality;
       'api::blog.blog': ApiBlogBlog;
+      'api::budget.budget': ApiBudgetBudget;
       'api::category.category': ApiCategoryCategory;
       'api::climate-change.climate-change': ApiClimateChangeClimateChange;
       'api::directory.directory': ApiDirectoryDirectory;
