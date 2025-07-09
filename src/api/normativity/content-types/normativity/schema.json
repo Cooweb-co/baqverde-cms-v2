@@ -12,52 +12,43 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "File name": {
       "type": "string",
       "required": true,
       "description": "The official name of the document (e.g., 'Agreement 0001 of 2023')"
     },
-    "normativityType": {
+    "Category": {
       "type": "enumeration",
       "enum": [
-        "Resolutions",
-        "Agreements",
-        "Annexes",
-        "Circulars",
-        "Notification",
-        "Order"
+        "Resoluciones",
+        "Acuerdos",
+        "Anexos",
+        "Circulares",
+        "Notificaciones",
+        "Autos"
       ],
       "required": true,
       "description": "The type of regulatory document (select from the available options)"
     },
-    "description": {
+    "Description": {
       "type": "text",
       "required": true,
       "description": "A brief summary of the document's content and purpose"
     },
-    "document": {
+    "Upload file": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "files"
       ]
     },
-    "year": {
+    "Year": {
       "type": "integer",
       "required": true,
       "min": 1900,
       "max": 2100,
       "description": "The year when the document was issued"
-    },
-    "referenceNumber": {
-      "type": "string",
-      "required": false,
-      "description": "The official reference or identification number of the document (e.g., '0001', '1482')"
-    },
-    "slug": {
-      "type": "uid",
-      "description": "URL-friendly version of the file name (automatically generated)"
     }
   }
 }
