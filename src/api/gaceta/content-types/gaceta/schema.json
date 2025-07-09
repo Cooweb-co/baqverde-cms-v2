@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gacetas",
+  "info": {
+    "singularName": "gaceta",
+    "pluralName": "gacetas",
+    "displayName": "Gazettes"
+  },
+  "options": {
+    "draftAndPublish": true,
+    "listView": {
+      "availableViews": ["LIST_VIEW", "CARD_VIEW"]
+    }
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Company Name / Natural Person": {
+      "type": "string",
+      "required": true,
+      "searchable": true,
+      "displayName": "Company Name / Natural Person"
+    },
+    "File Name": {
+      "type": "string",
+      "required": true,
+      "searchable": true,
+      "displayName": "File Name"
+    },
+    "Type Identification": {
+      "type": "enumeration",
+      "enum": ["Nit", "C.C.", "C.E.", "Pasaporte"],
+      "required": true,
+      "displayName": "Type Identification"
+    },
+    "Identification Number": {
+      "type": "string",
+      "required": true,
+      "searchable": true,
+      "displayName": "Identification Number"
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": ["Resolución", "Notificación", "Auto"],
+      "required": true,
+      "displayName": "Category"
+    },
+    "Description": {
+      "type": "text",
+      "required": true,
+      "displayName": "Description"
+    },
+    "Publication Date": {
+      "type": "date",
+      "required": true,
+      "displayName": "Publication Date"
+    },
+    "Upload File": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["files"],
+      "displayName": "Upload PDF"
+    }
+  }
+}

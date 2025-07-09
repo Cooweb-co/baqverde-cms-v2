@@ -1,4 +1,8 @@
 module.exports = ({ env }) => ({
+  'custom-field': {
+    enabled: true,
+    resolve: './src/plugins/custom-field'
+  },
   'users-permissions': {
     config: {
       jwtSecret: env('JWT_SECRET'),
