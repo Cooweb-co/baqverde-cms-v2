@@ -16,6 +16,14 @@
       "type": "string",
       "required": true
     },
+    "startDate": {
+      "type": "date",
+      "required": true
+    },
+    "endDate": {
+      "type": "date",
+      "required": true
+    },
     "report": {
       "type": "media",
       "multiple": false,
