@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_window_access_reasons",
+  "info": {
+    "displayName": "Access Reason",
+    "icon": "list",
+    "description": "Reasons why businesses should access the green window"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "order": {
+      "type": "integer",
+      "default": 1,
+      "min": 1,
+      "required": true
+    }
+  }
+} 

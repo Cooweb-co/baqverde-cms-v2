@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_infos",
+  "info": {
+    "singularName": "contact-info",
+    "pluralName": "contact-infos",
+    "displayName": "Contact Information",
+    "description": "Contact information for EPA Barranquilla Verde officials"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fullName": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "description": "Full name of the contact person"
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true,
+      "description": "Official email address"
+    },
+    "mobilePhone": {
+      "type": "string",
+      "required": true,
+      "description": "Mobile phone number"
+    },
+    "extensionNumber": {
+      "type": "string",
+      "required": true,
+      "description": "Office extension number"
+    },
+    "officeAddress": {
+      "type": "string",
+      "required": true,
+      "description": "Physical office address"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ],
+      "description": "Profile photo of the contact person"
+    }
+  }
+} 

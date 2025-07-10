@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "green_businesses",
+  "info": {
+    "singularName": "green-business",
+    "pluralName": "green-businesses",
+    "displayName": "Green Business",
+    "description": "Single Window for Green Business management"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true,
+      "description": "Definition of what constitutes green businesses"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ],
+      "description": "Representative image for green business"
+    }
+  }
+} 

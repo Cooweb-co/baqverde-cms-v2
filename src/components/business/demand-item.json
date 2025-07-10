@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_business_demand_items",
+  "info": {
+    "displayName": "Demand Item",
+    "description": "Demand section items for green business"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "text",
+      "required": true,
+      "description": "Demand item content"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "required": true,
+      "description": "Display order of the item"
+    }
+  }
+} 
