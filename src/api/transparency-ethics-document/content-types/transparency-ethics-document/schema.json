@@ -4,7 +4,7 @@
   "info": {
     "singularName": "transparency-ethics-document",
     "pluralName": "transparency-ethics-documents",
-    "displayName": "Transparency Ethics Document",
+    "displayName": "Transparency and Ethics Program",
     "description": "Collection to manage all transparency and ethics related documents"
   },
   "options": {
@@ -19,7 +19,7 @@
     },
     "description": {
       "type": "text",
-      "required": true
+      "required": false
     },
     "document": {
       "type": "media",
@@ -55,4 +55,4 @@
       "max": 2030
     }
   }
-} 
+}
