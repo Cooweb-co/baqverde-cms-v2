@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_business_supply_items",
+  "info": {
+    "displayName": "Supply Item",
+    "description": "Supply section items for green business"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "text",
+      "required": true,
+      "description": "Supply item content"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "required": true,
+      "description": "Display order of the item"
+    }
+  }
+} 
