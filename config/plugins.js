@@ -10,20 +10,16 @@ module.exports = ({ env }) => ({
   },
   upload: {
     config: {
-      provider: 'strapi-provider-cloudflare-r2',
+      provider: 'local',
       providerOptions: {
-        accessKeyId: env('CLOUDINARY_KEY'),
-        secretAccessKey: env('CLOUDINARY_SECRET'),
-        endpoint: env('CF_ENDPOINT'),
-        cloudflarePublicAccessUrl: env('CF_PUBLIC_ACCESS_URL'),
-        params: {
-          Bucket: env('CF_BUCKET'),
-        },
+        sizeLimit: 100 * 1024 * 1024, // 100MB en bytes
       },
       actionOptions: {
         upload: {},
-        delete: {},
+        uploadStream: {},
+        delete: {}
       },
+      mimeTypes: ['application/pdf']
     },
   },
 });
