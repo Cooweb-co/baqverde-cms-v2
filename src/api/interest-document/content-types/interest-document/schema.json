@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "interest_documents",
+  "info": {
+    "singularName": "interest-document",
+    "pluralName": "interest-documents",
+    "displayName": "Interest Document",
+    "description": "Collection for documents of interest related to green businesses"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "document": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+} 
