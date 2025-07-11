@@ -1,0 +1,48 @@
+{
+  "kind": "singleType",
+  "collectionName": "main_modals",
+  "info": {
+    "singularName": "main-modal",
+    "pluralName": "main-modals",
+    "displayName": "Main Modal",
+    "description": "Configuration for the main modal displayed on the homepage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "internalTitle": {
+      "type": "string",
+      "required": true,
+      "description": "Internal reference title for this modal"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false,
+      "required": true,
+      "description": "Controls whether the modal should be displayed"
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ],
+      "description": "The image to be displayed in the modal"
+    },
+    "link": {
+      "type": "string",
+      "description": "Optional URL where users will be redirected when clicking the modal"
+    },
+    "startDate": {
+      "type": "datetime",
+      "description": "Optional start date for when the modal should begin displaying"
+    },
+    "endDate": {
+      "type": "datetime",
+      "description": "Optional end date for when the modal should stop displaying"
+    }
+  }
+} 
