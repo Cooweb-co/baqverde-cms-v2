@@ -73,7 +73,7 @@ module.exports = createCoreController('api::gaceta.gaceta', ({ strapi }) => ({
     const { query } = ctx;
     const { results, pagination } = await strapi.service('api::gaceta.gaceta').find({
       ...query,
-      populate: ['archivo']
+      populate: ['uploadFile']
     });
     const sanitizedResults = await this.sanitizeOutput(results, ctx);
     return this.transformResponse(sanitizedResults, { pagination });
@@ -83,7 +83,7 @@ module.exports = createCoreController('api::gaceta.gaceta', ({ strapi }) => ({
     const { id } = ctx.params;
     const entity = await strapi.db.query('api::gaceta.gaceta').findOne({
       where: { id },
-      populate: ['archivo']
+      populate: ['uploadFile']
     });
     const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
     return this.transformResponse(sanitizedEntity);

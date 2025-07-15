@@ -1,3 +1,11 @@
+'use strict';
+
+/**
+ * gaceta router
+ */
+
+const { createCoreRouter } = require('@strapi/strapi').factories;
+
 module.exports = {
   routes: [
     {
@@ -5,8 +13,7 @@ module.exports = {
       path: '/gacetas',
       handler: 'gaceta.find',
       config: {
-        policies: [],
-        auth: false
+        policies: []
       }
     },
     {
