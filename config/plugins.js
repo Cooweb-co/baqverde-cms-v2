@@ -1,8 +1,4 @@
 module.exports = ({ env }) => ({
-  'custom-field': {
-    enabled: true,
-    resolve: './src/plugins/custom-field'
-  },
   'users-permissions': {
     config: {
       jwtSecret: env('JWT_SECRET'),
@@ -12,14 +8,19 @@ module.exports = ({ env }) => ({
     config: {
       provider: 'strapi-provider-cloudflare-r2',
       providerOptions: {
-        sizeLimit: 100 * 1024 * 1024, // 100MB en bytes
+        // cloud_name: '45e3f5fd0378eddb9338076165751b4f' || env('CLOUDINARY_NAME'),
+        accessKeyId: env('CLOUDINARY_KEY'),
+        secretAccessKey: env('CLOUDINARY_SECRET'),
+        endpoint: env('CF_ENDPOINT'),
+        cloudflarePublicAccessUrl: env('CF_PUBLIC_ACCESS_URL'),
+        params: {
+          Bucket: env('CF_BUCKET'),
+        },
       },
       actionOptions: {
         upload: {},
-        uploadStream: {},
-        delete: {}
+        delete: {},
       },
-      mimeTypes: ['application/pdf']
     },
   },
 });
