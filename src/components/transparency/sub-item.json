@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_transparency_sub_items",
+  "info": {
+    "displayName": "Sub-Item",
+    "icon": "bulletList",
+    "description": "A sub-item for the transparency section, with a title and an optional link or document."
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string"
+    },
+    "document": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}

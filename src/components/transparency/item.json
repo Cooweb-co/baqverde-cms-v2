@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_transparency_items",
+  "info": {
+    "displayName": "Item",
+    "icon": "link",
+    "description": "An item for the transparency section, which can contain sub-items."
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string"
+    },
+    "document": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "sub_items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "transparency.sub-item"
+    }
+  }
+}
