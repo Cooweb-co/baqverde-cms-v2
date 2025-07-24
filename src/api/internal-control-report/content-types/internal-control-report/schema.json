@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "internal_control_reports",
+  "info": {
+    "singularName": "internal-control-report",
+    "pluralName": "internal-control-reports",
+    "displayName": "Internal Control Report",
+    "description": "Detailed reports on the state of internal control"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "reportType": {
+      "type": "enumeration",
+      "enum": [
+        "first report",
+        "second report",
+        "third report"
+      ],
+      "required": true,
+      "description": "Type of report (first, second, or third of the year)"
+    },
+    "year": {
+      "type": "integer",
+      "required": true,
+      "min": 2015,
+      "max": 2030,
+      "description": "Year of the report"
+    },
+    "document": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "description": {
+      "type": "text",
+      "required": false,
+      "description": "Brief description of the report content"
+    }
+  }
+}
