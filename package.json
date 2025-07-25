@@ -11,6 +11,8 @@
     "dev": "railway run npm run develop"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.842.0",
+    "@aws-sdk/s3-request-presigner": "^3.842.0",
     "@strapi/plugin-i18n": "^4.25.22",
     "@strapi/plugin-users-permissions": "^4.25.22",
     "@strapi/strapi": "^4.25.22",

@@ -3,7 +3,7 @@
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
 // Crear el router por defecto para las rutas CRUD
-const defaultRouter = createCoreRouter('api::financial-report.financial-report', {
+const defaultRouter = createCoreRouter('api::budget.budget', {
   config: {
     find: { auth: false },
     findOne: { auth: false },
@@ -29,22 +29,11 @@ const customRouter = (innerRouter, extraRoutes = []) => {
 const customRoutes = [
   {
     method: 'GET',
-    path: '/financial-reports/test-signed-url',
-    handler: 'financial-report.testSignedUrl',
+    path: '/budgets/signed-url/:fileId',
+    handler: 'budget.getSignedUrl',
     config: {
       auth: false,
-      description: 'Endpoint de prueba para generar URLs firmadas',
-      policies: [],
-      middlewares: [],
-    },
-  },
-  {
-    method: 'GET',
-    path: '/financial-reports/signed-url/:fileId',
-    handler: 'financial-report.getSignedUrl',
-    config: {
-      auth: false,
-      description: 'Obtener URL firmada para un archivo',
+      description: 'Obtener URL firmada para un archivo de presupuesto',
       policies: [],
       middlewares: [],
     },
