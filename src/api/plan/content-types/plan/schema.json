@@ -44,7 +44,7 @@
         "Archivo Institucional",
         "Transparencia y Ética Pública"
       ],
-      "required": true
+      "required": false
     },
     "otherPlanCategory": {
       "type": "string",

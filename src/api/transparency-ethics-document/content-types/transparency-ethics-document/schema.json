@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transparency_ethics_documents",
+  "info": {
+    "singularName": "transparency-ethics-document",
+    "pluralName": "transparency-ethics-documents",
+    "displayName": "Transparency and Ethics Program",
+    "description": "Collection to manage all transparency and ethics related documents"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "document": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "transparency_program",
+        "risk_map",
+        "resolution"
+      ],
+      "required": true
+    },
+    "documentType": {
+      "type": "enumeration",
+      "enum": [
+        "main_document",
+        "first_follow_up",
+        "second_follow_up",
+        "third_follow_up"
+      ],
+      "required": true
+    },
+    "year": {
+      "type": "integer",
+      "required": true,
+      "min": 2020,
+      "max": 2030
+    }
+  }
+}

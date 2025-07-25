@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "management_reports",
+  "info": {
+    "singularName": "management-report",
+    "pluralName": "management-reports",
+    "displayName": "Management Report",
+    "description": "Informes de gestión"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "mimeTypes": ["application/pdf"]
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "document": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["files"]
+    }
+  }
+}

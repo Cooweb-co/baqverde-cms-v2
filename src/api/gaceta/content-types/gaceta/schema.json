@@ -7,10 +7,7 @@
     "displayName": "Gazettes"
   },
   "options": {
-    "draftAndPublish": true,
-    "listView": {
-      "availableViews": ["LIST_VIEW", "CARD_VIEW"]
-    }
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -54,12 +51,13 @@
       "required": true,
       "displayName": "Publication Date"
     },
-    "Upload File": {
+    "uploadFile": {
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["files"],
-      "displayName": "Upload PDF"
+      "allowedTypes": [
+        "files"
+      ]
     }
   }
 }

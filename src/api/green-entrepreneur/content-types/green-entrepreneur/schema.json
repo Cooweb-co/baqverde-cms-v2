@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "green_entrepreneurs",
+  "info": {
+    "singularName": "green-entrepreneur",
+    "pluralName": "green-entrepreneurs",
+    "displayName": "Green Entrepreneur",
+    "description": "Collection for participating green entrepreneurs"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "websiteUrl": {
+      "type": "string",
+      "required": true
+    }
+  }
+} 
