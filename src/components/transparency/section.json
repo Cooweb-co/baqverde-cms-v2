@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_transparency_sections",
+  "info": {
+    "displayName": "Section",
+    "description": "Accordion block for the transparency page"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "elements": {
+      "type": "component",
+      "repeatable": true,
+      "component": "transparency.section-element",
+      "required": true
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}
