@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_contact_person_contacts",
+  "info": {
+    "displayName": "Contact Person",
+    "description": "Contact person details for the Green Business one-stop window"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "mobile_phone": {
+      "type": "string",
+      "required": true
+    },
+    "landline_phone": {
+      "type": "string",
+      "required": false
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_documents_of_interest_documents",
+  "info": {
+    "displayName": "Document of Interest",
+    "description": "Document listed under Documents of Interest"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "pdf_file": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ],
+      "pluginOptions": {
+        "upload": {
+          "allowedMimeTypes": [
+            "application/pdf"
+          ]
+        }
+      }
+    }
+  }
+}
