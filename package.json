@@ -26,5 +26,11 @@
   "engines": {
     "node": "20"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "5.2.0",
+    "styled-components": "5.2.1"
+  }
 }

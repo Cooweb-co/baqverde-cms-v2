@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "green_business_one_stop_windows",
+  "info": {
+    "singularName": "green-business-one-stop-window",
+    "pluralName": "green-business-one-stop-windows",
+    "displayName": "Green Business Page",
+    "description": "Main editable content for the Green Business One-Stop Window page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "documents_of_interest": {
+      "type": "component",
+      "repeatable": true,
+      "component": "documents-of-interest.document"
+    },
+    "green_business_magazine": {
+      "type": "component",
+      "repeatable": true,
+      "component": "green-business-magazine.magazine"
+    },
+    "contact_person": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact-person.contact"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_green_business_magazine_magazines",
+  "info": {
+    "displayName": "Green Business Magazine",
+    "description": "Magazine editions for the Green Business program"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "publication_date": {
+      "type": "date"
+    },
+    "pdf_file": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ],
+      "pluginOptions": {
+        "upload": {
+          "allowedMimeTypes": [
+            "application/pdf"
+          ]
+        }
+      }
+    }
+  }
+}
