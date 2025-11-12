@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "transparency_pages",
+  "info": {
+    "singularName": "transparency-page",
+    "pluralName": "transparency-pages",
+    "displayName": "Transparency Page",
+    "description": "Content for the Transparency and Access to Public Information page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sections": {
+      "type": "component",
+      "repeatable": true,
+      "component": "transparency.section",
+      "required": true
+    }
+  }
+}

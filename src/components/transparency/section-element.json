@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_transparency_section_elements",
+  "info": {
+    "displayName": "Section Element",
+    "description": "Primary link entry within a transparency section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string"
+    },
+    "pdf": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ],
+      "pluginOptions": {
+        "upload": {
+          "allowedMimeTypes": [
+            "application/pdf"
+          ]
+        }
+      }
+    },
+    "subitems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "transparency.section-subitem"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}
