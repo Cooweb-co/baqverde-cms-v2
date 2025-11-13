@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_budget_budget_items",
+  "info": {
+    "displayName": "Budget Item",
+    "description": "Budget entry with year and PDF"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "year": {
+      "type": "integer",
+      "required": true
+    },
+    "pdf_file": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ],
+      "pluginOptions": {
+        "upload": {
+          "allowedMimeTypes": [
+            "application/pdf"
+          ]
+        }
+      }
+    }
+  }
+}

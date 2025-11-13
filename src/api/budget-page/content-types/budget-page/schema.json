@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "budget_pages",
+  "info": {
+    "singularName": "budget-page",
+    "pluralName": "budget-pages",
+    "displayName": "Budget Page",
+    "description": "Content for the budget landing page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "budgets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "budget.budget-item",
+      "required": true
+    }
+  }
+}
