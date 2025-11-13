@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "citizen_participations",
+  "info": {
+    "singularName": "citizen-participation",
+    "pluralName": "citizen-participations",
+    "displayName": "Citizen Participation",
+    "description": "Content structure for citizen participation page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "citizen-participation.option"
+    }
+  }
+}
