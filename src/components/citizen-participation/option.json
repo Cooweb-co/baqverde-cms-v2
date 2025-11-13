@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_citizen_participation_options",
+  "info": {
+    "displayName": "Option",
+    "description": "Citizen participation option"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "document_type": {
+      "type": "enumeration",
+      "enum": [
+        "informe",
+        "guia"
+      ],
+      "required": true
+    },
+    "year": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "document": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ],
+      "pluginOptions": {
+        "upload": {
+          "allowedMimeTypes": [
+            "application/pdf"
+          ]
+        }
+      }
+    }
+  }
+}
