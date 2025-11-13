@@ -1,0 +1,56 @@
+{
+  "kind": "singleType",
+  "collectionName": "sidebar_environments",
+  "info": {
+    "singularName": "sidebar-environment",
+    "pluralName": "sidebar-environments",
+    "displayName": "Sidebar Environment",
+    "description": "Sidebar content for news layout environment info"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "monthImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ],
+      "required": true
+    },
+    "calendarTitle": {
+      "type": "string",
+      "required": true
+    },
+    "calendarBackground": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "calendarDocument": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ],
+      "pluginOptions": {
+        "upload": {
+          "allowedMimeTypes": [
+            "application/pdf"
+          ]
+        }
+      }
+    },
+    "publishedDate": {
+      "type": "date"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
